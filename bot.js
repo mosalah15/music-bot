@@ -23,20 +23,6 @@ const client = new Discord.Client({disableEveryone: true});
 const prefix = "!";
 /////////////////////////
 ////////////////////////
-client.on('message', msg => {
-
-    if (msg.content == '$join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('white_check_mark'));
-     }
-    }
-}
-})
-client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("517071036928360464").join(); //by : Toxic Codes
-    });
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
