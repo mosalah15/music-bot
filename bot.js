@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "2";
+const prefix = "!";
 /////////////////////////
 ////////////////////////
 
@@ -99,10 +99,10 @@ client.on('message', async msg => {
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-	if (command === `play`) {
+	if (command === `p`) {
 		const voiceChannel = msg.member.voiceChannel;
         
-        if (!voiceChannel) return msg.channel.send("انت لم تدخل روم صوتي");
+        if (!voiceChannel) return msg.channel.send("يجب ان تكون في روم صوتي");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         
@@ -317,7 +317,7 @@ client.on('message', message => {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
+        .addField('p', 'لتشغيل اغنية')
         .addField('join', 'دخول رومك الصوتي')
         .addField('disconnect', 'الخروج من رومك الصوتي')
         .addField('skip', 'تخطي الأغنية')
