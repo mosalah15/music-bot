@@ -35,7 +35,7 @@ client.on('message', msg => {
 }
 })
 client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("ايدي الروم").join(); //by : Toxic Codes
+    client.channels.get("517071036928360464").join(); //by : Toxic Codes
     });
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
